@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="de">
+    
+
+<head>
+    <!-- Metadaten der Webanwendung -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Kleiderspende Magdeburg e.V.">
+    <meta name="author" content="Dennis">
+
+    <!-- Titel der Webseite -->
+    <title>Kleiderspende Magdeburg e.V.</title>
+
+    <!-- Bootstrap v4.4.1 CSS framework hinzufügen -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- jQuery 3.4.1 JavaScript library hinzufügen -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <!-- Popper.js 1.16.0 positioning engine hinzufügen -->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap.js v4.4.1 JavaScript framework hinzufügen -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- CSS Anpassungen -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+    <!-- JavaScript -->
+    <script type="text/javascript">
+
+        function changeInfo(id) {
+            var ukraine = 'Der Konflikt wird wahrscheinlich bis ins Jahr 2023 andauern. Für Ukrainer * innen besteht ein erhöhtesRisiko für Verletzungen, Krankheiten und Tod.Durch russische Raketenangriffe könntenMillionen Menschen im Winter ohne Wasser, Strom und Heizung sein.Mehr als 6,5 Millionen Ukrainer * innen sind innerhalb des Landes vertrieben. 7,8 Millionen weitere Menschen sind in andere europäische Länder geflüchtet.';
+            var haiti = 'Bandengewalt wird weiterhin die Lebensgrundlagen der Menschen und lebenswichtige Dienstleistungen beeinträchtigen. Entführungen, geschlechtsspezifische Gewalt und Morde nehmen weiter zu. Haiti verzeichnete 2022 ein Rekordniveau an Ernährungsunsicherheit, das sich 2023 voraussichtlich noch verschlimmern wird. Gleichzeitig werden politische Unruhen und Gewalt humanitäre Organisationen auch 2023 daran hindern, Menschen in Not zu erreichen.';
+            var burkinaFaso = 'Die Lage in Burkina Faso wird immer schlimmer: Nichtstaatliche bewaffnete Gruppen verstärken ihre Angriffe und übernehmen immer weiter die Kontrolle. Die Spannungen zwischen den politischen Gruppierungen des Landes verursachen Instabilität. Allein im Jahr 2022 haben Mitglieder*innen der Streitkräfte zweimal die Macht übernommen. Bewaffnete Gruppen kontrollieren inzwischen bis zu 40 Prozent des Landes. Obwohl die Not groß ist, wird die humanitäre Hilfe durch Konflikte und fehlende Gelder eingeschränkt. Einige Städte im Norden Burkina Fasos sind fast vollständig von der Außenwelt abgeschnitten. Die Lebensmittelpreise sind um 30 Prozent gestiegen, eine der höchsten Inflationsraten der Welt.';
+            var suedsudan = 'Südsudan erholt sich noch von einem Bürgerkrieg, der im Jahr 2018 endete. Der Konflikt hat zwar abgenommen, aber die Kämpfe sind nach wie vor weit verbreitet. Das Land ist eines der fragilsten der Welt. Klimakatastrophen wie schwere Überschwemmungen und Dürren erschweren den Menschen zunehmend den Zugang zu Lebensmitteln und lebenswichtigen Ressourcen.';
+            var syrien = 'Mehr als ein Jahrzehnt Krieg hat das syrische Gesundheitssystem zerstört und das Land an den Rand des wirtschaftlichen Zusammenbruchs gebracht. Langjährige Konflikte im benachbarten Libanon haben zu einem weiteren Anstieg der Lebensmittelpreise und der Armut geführt. Derzeit sind 75 Prozent der Syrer*innen nicht in der Lage, ihre Grundbedürfnisse zu decken. Millionen von Menschen sind auf humanitäre Hilfe angewiesen.';
+            var jemen = 'Die Krise im Jemen verschärft sich und der seit acht Jahren andauernde Konflikt zwischen bewaffneten Gruppen und Regierungstruppen bleibt ungelöst. Ein Waffenstillstand dämmte die Kämpfe für einige Monate ein. Er brach aber im Oktober 2022 zusammen und konnte die wirtschaftlichen und gesundheitlichen Folgen des Konflikts nicht abmildern. Die Finanzierung der humanitären Hilfe hat sich verzögert. Gegenwärtig leben 80 Prozent der Bevölkerung in extremer Armut und 2,2 Millionen Kinder sind akut unterernährt.';
+            var kongo = 'Mehr als 100 bewaffnete Gruppen kämpfen im Ostkongo um die Kontrolle und schüren damit eine seit Jahrzehnten andauernde Krise. Die Bevölkerung wird häufig zur Zielscheibe. Nach fast zehn Jahren der Ruhe startete die bewaffnete Gruppe M23 im Jahr 2022 eine neue Offensive, die Familien zur Flucht zwingt und die humanitäre Hilfe unterbricht. Große Krankheitsausbrüche - darunter Masern, Malaria und Ebola - bedrohen weiterhin das ohnehin schwache Gesundheitssystem und gefährden viele Menschenleben.';
+            var afghanistan = 'Afghanistan stand 2022 auf Platz 1 der Emergency Watchlist, ist aber für 2023 zurückgefallen. Nicht, weil sich die Bedingungen verbessert haben, sondern weil die Lage in Ostafrika sich so verschärft hat. Mehr als ein Jahr nach der Machtübernahme durch die Taliban befinden sich die Afghan*innen nach wie vor im wirtschaftlichen Kollaps. Zwar konnte durch eine rasche Aufstockung der Hilfe eine Hungersnot im letzten Winter verhindert werden. Doch die eigentliche Ursache der Krise bleibt bestehen. Fast die gesamte Bevölkerung lebt nun in Armut und bereitet sich auf einen weiteren langen Winter vor.';
+            var aethiopien = 'Äthiopien steuert auf die sechste ausgefallene Regenzeit in Folge zu. Dadurch könnte sich die Dürre, von der bereits 24 Millionen Menschen betroffen sind, verlängern Gleichzeitig bringen verschiedene Konflikte im ganzen Land das Leben der Menschen durcheinander und hindern humanitäre Organisationen daran, Hilfe zu leisten. Diese Gewalt hindert die Nichtregierungsorganisationen daran, lebensrettende Hilfe zu leisten. Auch wenn ein Friedensabkommen vom November 2022 Hoffnung auf ein Ende des Konflikts in Tigray im Norden Äthiopiens macht, sind 28,6 Millionen Menschen weiterhin auf humanitäre Hilfe angewiesen.';
+            var somalia = 'Somalia, das zum ersten Mal auf der Watchlist steht, ist von einer beispiellosen Dürre- und Hungerkrise betroffen. Tausende von Menschen sind bereits dem Hunger zum Opfer gefallen, und das Land steht am Rande einer Hungersnot. Dies ist keine "Naturkatastrophe". Der von Menschen verursachte Klimawandel hat die Häufigkeit und Schwere der Dürren erhöht. Jahrzehntelange Konflikte haben die Fähigkeit Somalias untergraben, auf Schocks jeglicher Art zu reagieren. Sie haben Systeme und Infrastrukturen zerstört, die einen Schutzwall gegen die aktuelle Krise geboten hätten. So hat sich beispielsweise die Abhängigkeit Somalias von Importen als katastrophal erwiesen: Die Nahrungsmittelproduktion des Landes wurde durch den Klimawandel und den Konflikt dezimiert. Über 90 Prozent des Weizens kommen aus Russland und der Ukraine.';
+
+            var aktuell = "";
+
+            if (id == 'wahl1Ueb' || id == 'wahl1Ab') aktuell = ukraine;
+            else if (id == 'wahl2Ueb' || id == 'wahl2Ab') aktuell = haiti;
+            else if (id == 'wahl3Ueb' || id == 'wahl3Ab') aktuell = burkinaFaso;
+            else if (id == 'wahl4Ueb' || id == 'wahl4Ab') aktuell = suedsudan;
+            else if (id == 'wahl5Ueb' || id == 'wahl5Ab') aktuell = syrien;
+            else if (id == 'wahl6Ueb' || id == 'wahl6Ab') aktuell = jemen;
+            else if (id == 'wahl7Ueb' || id == 'wahl7Ab') aktuell = kongo;
+            else if (id == 'wahl8Ueb' || id == 'wahl8Ab') aktuell = afghanistan;
+            else if (id == 'wahl9Ueb' || id == 'wahl9Ab') aktuell = aethiopien;
+            else if (id == 'wahl10Ueb' || id == 'wahl10Ab') aktuell = somalia;
+
+            document.getElementById('outputInfoAb').innerHTML = aktuell;
+            document.getElementById('outputInfoUeb').innerHTML = aktuell;
+        }
+        function getDate() {
+
+        }
+
+        function setAbForm() {
+            document.getElementById("uebForm").style.display = "none";
+            document.getElementById("abForm").style.display = "block";
+        }
+
+        function setUebForm() {
+            document.getElementById("abForm").style.display = "none";
+            document.getElementById("uebForm").style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+    <header class="container d-flex flex-wrap justify-content-between align-items-center">
+        <div class="col-sm-3 row justify-content-start list-unstyled d-flex">
+            <img calss="small-img img-responsive" src="bilder/kleiderspende-logo.jpg" alt="Logo" width="160"
+                height="auto">
+            <a type="button" style="display: none;" class="show-sml btn-head-sml btn btn-success btn-sm"
+                href="#anchor-spende">Jetzt spenden</a>
+        </div>
+        <a type="button" style="display: none;" class="show-md btn btn-success" href="#anchor-spende">Jetzt
+            spenden</a>
+        <div class="col-sm-6 hide-sml hide-md row justify-content-center list-unstyled d-flex mt-2">
+            <h3 class="align-middle">Kleiderspende Magdeburg e.V.</h3>
+        </div>
+        <div class="col-sm-3 btn-head-sml hide-sml hide-md row justify-content-end list-unstyled d-flex" style="display: none;">
+            <a type="button" class="btn btn-success btn-lg" href="#anchor-spende">Jetzt spenden</a>
+        </div>
+    </header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light navcolor rounded-bottom font-size-sml">
+            <div class="container">
+                <a class="navbar-brand font-size-sml" href="#">Kleiderspende Magdeburg e.V.</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Startseite<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/organisation.html" target="_blank">Organisation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/kontakt.html" target="_blank">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="card mt-4 d-flex">
+            <img src="bilder/flowers.jpg" class="card-img img-fluid img-trans" alt="Stony Beach" />
+            <div class="card-img-overlay">
+                <h1 class="card-title font-weight-bold title-font-sml title-font-md p-5 m-4" style="font-size:350%;">
+                    Wir helfen Bedürftigen,<br>
+                    <span class="span-h1">ihre Würde zu wahren</span>
+                    <br>und in Wärme zu leben!
+                </h1>
+            </div>
+        </div>
+        <div id="anchor-spende">
+            <div class="container center-sml d-flex flex-wrap justify-content-between align-items-center mt-4">
+                <div class="card card-margin-sml card-margin-md col-sm-6 row justify-content-start shadow p-3 mb-5 bg-white rounded"
+                    style="width: 18rem;">
+                    <img class="shadow-lg card-img-top" src="bilder/abholdienst.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Abholung</h5>
+                        <p class="card-text">Hier können Sie kostenlos einen Abholtermin vereinbaren und einer
+                            unserer Mitarbeiter kommt persönlich bei Ihnen vorbei und holt die zu spendende Kleidung ab.
+                            Zusätzlich entscheiden Sie in welches aktuelles Krisengebiet die Kleidung gesendet werden
+                            soll.
+                        </p>
+                        <a id="btnAb" onclick="setAbForm()" class="btn btn-success" href="#anchor-abForm">Abholung
+                            vereinbaren</a>
+                    </div>
+                </div>
+                <div class="card col-sm-6 row card-margin-md justify-content-end shadow p-3 mb-5 bg-white rounded"
+                    style="width: 18rem;">
+                    <img class="shadow-lg card-img-top" src="bilder/puerbergabe.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Übergabe an der Geschäftsstelle</h5>
+                        <p class="card-text">Hier können Sie kostenlos einen Termin zur Abgabe der Kleidung an unserer
+                            Geschäftsstelle der Kleiderspende Magdeburg e.V. vereinbaren und selber entscheiden in
+                            welches
+                            Krisengebiet diese gesendet werden soll.</p><br class="hide-md">
+                        <a id="btnUeb" onclick="setUebForm()" class="btn btn-success" href="#anchor-uebForm">Übergabe
+                            anmelden</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Formular Abholung -->
+        <form action="ueberblick.html" method="get" id="abForm" style="display: none;">
+            <div class="form-group">
+                <h1 id="anchor-abForm">Fromular zur Abholung</h1>
+                <h5>Wähle deinen Wunschtermin und wir holen kostenlos deine Altkleider ab!</h5>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputDatumAb">Wunschtag<span style="color: #28a745;">*</span></label>
+                    <input type="date" id="inputDatumAb" onload="getDate()" class="form-control" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputUhrzeitAb">Wunschzeit<span style="color: #28a745;">*</span></label>
+                    <input type="time" class="form-control" id="inputUhrzeiAbt" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputVornameAb">Vorname<span style="color: #28a745;">*</span></label>
+                    <input type="text" class="form-control" id="inputVornameAb" placeholder="Vorname" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputNachnameAb">Nachname<span style="color: #28a745;">*</span></label>
+                    <input type="text" class="form-control" id="inputNachnameAb" placeholder="Nachname" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmailAb">Email<span style="color: #28a745;">*</span></label>
+                    <input type="email" class="form-control" id="inputEmailAb" placeholder="beispiel@mail.de" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputNachnameAb">Telefonnummer</label>
+                    <input type="tel" class="form-control" id="inputTelefonnummerAb" pattern="[0-9]"
+                        placeholder="01765894111">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputStadtAb">Stadt<span style="color: #28a745;">*</span></label>
+                    <input type="text" class="form-control" id="inputStadtAb" placeholder="Magdeburg" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputPostleitzahlAb">Postleitzahl<span style="color: #28a745;">*</span></label>
+                    <input type="text" class="form-control" id="inputPostleitzahlAb" placeholder="39112" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputBundeslandAb">Bundesland<span style="color: #28a745;">*</span></label>
+                    <select id="inputBundeslandAb" class="form-control" required>
+                        <option> Baden-Württemberg </option>
+                        <option> Bayern </option>
+                        <option> Berlin </option>
+                        <option> Brandenburg </option>
+                        <option> Bremen </option>
+                        <option> Hamburg </option>
+                        <option> Hessen </option>
+                        <option> Mecklenburg-Vorpommern </option>
+                        <option> Niedersachsen </option>
+                        <option> Nordrhein-Westfalen </option>
+                        <option> Rheinland-Pfalz </option>
+                        <option> Saarland </option>
+                        <option> Sachsen </option>
+                        <option selected> Sachsen-Anhalt </option>
+                        <option> Schleswig-Holstein </option>
+                        <option> Thüringen </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputStrasseAb">Straße<span style="color: #28a745;">*</span></label>
+                <input type="text" class="form-control" id="inputStrasseAb" placeholder="Wegenerstraße 15" required>
+            </div>
+            <div class="form-group">
+                <label for="inputKleidungAb">Kleidungs Typ und Menge<span style="color: #28a745;">*</span></label>
+                <textarea class="form-control" id="inputKleidungAb" rows="5"
+                    placeholder="10x T-Shirts, 3x Jacken, 5x Hosen" required></textarea>
+            </div>
+            <div class="form-row mt-3 mb-4">
+                <div class="btn-group btn-group-toggle col-md-6 list-group mb-2" data-toggle="buttons">
+                    <label for="inputKrisengebietAb">In welches Krisengebiet soll geliefert werden?
+                        <span style="color: #28a745;">*</span></label>
+                    <label class="btn btn-light border rounded btn-lg active">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl1Ab"
+                            autocomplete="off" checked> Ukraine
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl2Ab"
+                            autocomplete="off"> Haiti
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl3Ab"
+                            autocomplete="off"> Burkina Faso
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl4Ab"
+                            autocomplete="off"> Südsudan
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl5Ab"
+                            autocomplete="off"> Syrien
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl6Ab"
+                            autocomplete="off"> Jemen
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl7Ab"
+                            autocomplete="off"> Demokratische Republik Kongo
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl8Ab"
+                            autocomplete="off"> Afghanistan
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl9Ab"
+                            autocomplete="off"> Äthiopien
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl10Ab"
+                            autocomplete="off"> Somalia
+                    </label>
+                </div>
+                <div class="orm-group col-md-6 list-group pl-2">
+                    <label for="inputKrisengebietAb">Information zu dem Krisengebiet</label>
+                    <label class="card card-body card-padding-sml card-padding-md text-center px-5 pt-5"
+                        id="outputInfoAb">Der Konflikt
+                        wird
+                        wahrscheinlich
+                        bis
+                        ins Jahr
+                        2023
+                        andauern. Für Ukrainer*innen besteht ein erhöhtes
+                        Risiko für Verletzungen, Krankheiten und Tod. Durch russische
+                        Raketenangriffe könnten
+                        Millionen
+                        Menschen im Winter
+                        ohne Wasser, Strom und Heizung sein. Mehr als 6,5 Millionen Ukrainer*innen
+                        sind innerhalb
+                        des
+                        Landes vertrieben.
+                        7,8 Millionen weitere Menschen sind in andere europäische Länder geflüchtet.
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="datenschutzCheckUeb" required>
+                    <label class="form-check-label" for="datenschutzCheckUeb">
+                        Ich stimme den <a href="/agb.html" target="_blank">Allgemeinen Geschäftsbedingungen</a> und der
+                        <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> von Kleiderspende Magdeburg
+                        e.V. zu.
+                    </label>
+                </div>
+            </div>
+            <div class="form-group center-sml center-md">
+                <button type="submit" class="btn btn-success btn-lg m-2">Buchen</button>
+            </div>
+        </form>
+        <!-- Formular Uebergabe -->
+        <form action="/ueberblick.html" method="get" id="uebForm" style="display: none;">
+            <div class="form-group">
+                <h1 id="anchor-uebForm">Formular zu Übergabe an der Geschäftsstelle</h1>
+                <h5>Hier bitte den Kleidungs Typ und die Menge angeben!</h5>
+            </div>
+            <div class="form-group">
+                <label for="inputKleidungUeb">Kleidungs Typ und Menge<span style="color: #28a745;">*</span></label>
+                <textarea class="form-control" id="inputKleidungUeb" rows="5"
+                    placeholder="10x T-Shirts, 3x Jacken, 5x Hosen" required></textarea>
+            </div>
+            <div class="form-row mt-3 mb-4">
+                <div class="btn-group btn-group-toggle col-md-6 list-group mb-2" data-toggle="buttons">
+                    <label for="inputKrisengebietUeb">In welches Krisengebiet soll geliefert werden?
+                        <span style="color: #28a745;">*</span></label>
+                    <label class="btn btn-light border rounded btn-lg active">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl1Ueb"
+                            autocomplete="off" checked> Ukraine
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl2Ueb"
+                            autocomplete="off"> Haiti
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl3Ueb"
+                            autocomplete="off"> Burkina Faso
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl4Ueb"
+                            autocomplete="off"> Südsudan
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl5Ueb"
+                            autocomplete="off"> Syrien
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl6Ueb"
+                            autocomplete="off"> Jemen
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl7Ueb"
+                            autocomplete="off"> Demokratische Republik Kongo
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl8Ueb"
+                            autocomplete="off"> Afghanistan
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl9Ueb"
+                            autocomplete="off"> Äthiopien
+                    </label>
+                    <label class="btn btn-light border rounded btn-lg">
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl10Ueb"
+                            autocomplete="off"> Somalia
+                    </label>
+                </div>
+                <div class="orm-group col-md-6 list-group pl-2">
+                    <label for="inputKrisengebietUeb">Information zu dem Krisengebiet</label>
+                    <label class="card card-body card-padding-sml card-padding-md text-center px-5 pt-5"
+                        id="outputInfoUeb">Der Konflikt
+                        wird
+                        wahrscheinlich
+                        bis
+                        ins Jahr
+                        2023
+                        andauern. Für Ukrainer*innen besteht ein erhöhtes
+                        Risiko für Verletzungen, Krankheiten und Tod. Durch russische
+                        Raketenangriffe könnten
+                        Millionen
+                        Menschen im Winter
+                        ohne Wasser, Strom und Heizung sein. Mehr als 6,5 Millionen Ukrainer*innen
+                        sind innerhalb
+                        des
+                        Landes vertrieben.
+                        7,8 Millionen weitere Menschen sind in andere europäische Länder geflüchtet.
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="datenschutzCheckUeb" required>
+                    <label class="form-check-label" for="datenschutzCheckUeb">
+                        Ich stimme den <a href="/agb.html" target="_blank">Allgemeinen Geschäftsbedingungen</a> und der
+                        <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> von Kleiderspende Magdeburg
+                        e.V. zu.
+                    </label>
+                </div>
+            </div>
+            <div class="form-group center-sml center-md">
+                <button type="submit" class="btn btn-success btn-lg m-2">Buchen</button>
+            </div>
+        </form>
+    </div>
+    <footer
+        class="container center-sml d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="row w-100">
+            <div class="col-md-4 footer-md center-md d-flex align-items-center">
+                <span class="center-sml text-muted">© 2023 Kleiderspende Magdeburg e.V.</span>
+            </div>
+            <ul class="nav center-sml center-md col-md-6 row justify-content-center d-flex list-unstyled">
+                <li class="nav-item"><a href="/kontakt.html" target="_blank"
+                        class="nav-link zero-padding-md ul-sml text-muted">Impressum</a>
+                </li>
+                <li class="nav-item"><a href="/datenschutz.html" target="_blank"
+                        class="nav-link zero-padding-md ul-sml text-muted">Datenschutz</a>
+                </li>
+                <li class="nav-item"><a href="/agb.html" target="_blank"
+                        class="nav-link zero-padding-md ul-sml text-muted">AGB</a></li>
+                <li class="nav-item"><a href="/kontakt.html" target="_blank"
+                        class="nav-link zero-padding-md ul-sml text-muted">Kontakt</a>
+                </li>
+            </ul>
+            <ul class="center-sml footer-icons-md center-md col-md-2 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <a class="text-muted" href="https://www.facebook.com" target="_blank">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#facebook">
+                                <symbol id="facebook" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+                                    </path>
+                                </symbol>
+                            </use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-muted" href="https://www.instagram.com/" target="_blank">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram">
+                                <symbol id="instagram" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                                    </path>
+                                </symbol>
+                            </use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-muted" href="https://twitter.com" target="_blank">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#twitter">
+                                <symbol id="twitter" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                                    </path>
+                                </symbol>
+                            </use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

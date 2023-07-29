@@ -1,0 +1,115 @@
+.d-flex {
+    gap: 20px;
+}
+
+.img-trans {
+    opacity: 0.85;
+}
+
+.navbar {
+    background-color: #F5F5F5;
+}
+
+.span-h1 {
+    background-color: #28a745;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: -15px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .center-md {
+        display: flex !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .footer-icons-md {
+        min-width: 500px;
+        margin-top: 20px;
+    }
+
+    .footer-md {
+        min-width: 500px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .title-font-md {
+        font-size: 250% !important;
+        padding: 0 !important;
+        margin: 3% !important;
+    }
+
+    .hide-md {
+        display: none !important;
+    }
+
+    .show-md {
+        display: block !important;
+    }
+
+    .btn-head-md {
+        height: 100%;
+        width: auto;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .card-padding-md {
+        padding: 10px !important;
+        margin-top: 22px !important;
+    }
+
+    .zero-padding-md {
+        padding: 0px !important;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .center-sml {
+        display: flex !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .font-size-sml {
+        font-size: 15px;
+    }
+
+    .title-font-sml {
+        font-size: x-large !important;
+        padding: 0 !important;
+        margin: 3% !important;
+    }
+
+    .hide-sml {
+        display: none !important;
+    }
+
+    .show-sml {
+        display: block !important;
+    }
+
+    .btn-head-sml {
+        height: 100%;
+        width: auto;
+        margin-top: 22px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .card-padding-sml {
+        padding: 20px !important;
+    }
+
+    .ul-sml {
+        padding: 0px !important;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}
