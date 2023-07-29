@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-    
+
 
 <head>
     <!-- Metadaten der Webanwendung -->
@@ -16,69 +16,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- jQuery 3.4.1 JavaScript library hinzufügen -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <!-- Popper.js 1.16.0 positioning engine hinzufügen -->
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-
-    <!-- Bootstrap.js v4.4.1 JavaScript framework hinzufügen -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
     <!-- CSS Anpassungen -->
     <link rel="stylesheet" href="css/stylesheet.css">
-
-    <!-- JavaScript -->
-    <script type="text/javascript">
-
-        function changeInfo(id) {
-            var ukraine = 'Der Konflikt wird wahrscheinlich bis ins Jahr 2023 andauern. Für Ukrainer * innen besteht ein erhöhtesRisiko für Verletzungen, Krankheiten und Tod.Durch russische Raketenangriffe könntenMillionen Menschen im Winter ohne Wasser, Strom und Heizung sein.Mehr als 6,5 Millionen Ukrainer * innen sind innerhalb des Landes vertrieben. 7,8 Millionen weitere Menschen sind in andere europäische Länder geflüchtet.';
-            var haiti = 'Bandengewalt wird weiterhin die Lebensgrundlagen der Menschen und lebenswichtige Dienstleistungen beeinträchtigen. Entführungen, geschlechtsspezifische Gewalt und Morde nehmen weiter zu. Haiti verzeichnete 2022 ein Rekordniveau an Ernährungsunsicherheit, das sich 2023 voraussichtlich noch verschlimmern wird. Gleichzeitig werden politische Unruhen und Gewalt humanitäre Organisationen auch 2023 daran hindern, Menschen in Not zu erreichen.';
-            var burkinaFaso = 'Die Lage in Burkina Faso wird immer schlimmer: Nichtstaatliche bewaffnete Gruppen verstärken ihre Angriffe und übernehmen immer weiter die Kontrolle. Die Spannungen zwischen den politischen Gruppierungen des Landes verursachen Instabilität. Allein im Jahr 2022 haben Mitglieder*innen der Streitkräfte zweimal die Macht übernommen. Bewaffnete Gruppen kontrollieren inzwischen bis zu 40 Prozent des Landes. Obwohl die Not groß ist, wird die humanitäre Hilfe durch Konflikte und fehlende Gelder eingeschränkt. Einige Städte im Norden Burkina Fasos sind fast vollständig von der Außenwelt abgeschnitten. Die Lebensmittelpreise sind um 30 Prozent gestiegen, eine der höchsten Inflationsraten der Welt.';
-            var suedsudan = 'Südsudan erholt sich noch von einem Bürgerkrieg, der im Jahr 2018 endete. Der Konflikt hat zwar abgenommen, aber die Kämpfe sind nach wie vor weit verbreitet. Das Land ist eines der fragilsten der Welt. Klimakatastrophen wie schwere Überschwemmungen und Dürren erschweren den Menschen zunehmend den Zugang zu Lebensmitteln und lebenswichtigen Ressourcen.';
-            var syrien = 'Mehr als ein Jahrzehnt Krieg hat das syrische Gesundheitssystem zerstört und das Land an den Rand des wirtschaftlichen Zusammenbruchs gebracht. Langjährige Konflikte im benachbarten Libanon haben zu einem weiteren Anstieg der Lebensmittelpreise und der Armut geführt. Derzeit sind 75 Prozent der Syrer*innen nicht in der Lage, ihre Grundbedürfnisse zu decken. Millionen von Menschen sind auf humanitäre Hilfe angewiesen.';
-            var jemen = 'Die Krise im Jemen verschärft sich und der seit acht Jahren andauernde Konflikt zwischen bewaffneten Gruppen und Regierungstruppen bleibt ungelöst. Ein Waffenstillstand dämmte die Kämpfe für einige Monate ein. Er brach aber im Oktober 2022 zusammen und konnte die wirtschaftlichen und gesundheitlichen Folgen des Konflikts nicht abmildern. Die Finanzierung der humanitären Hilfe hat sich verzögert. Gegenwärtig leben 80 Prozent der Bevölkerung in extremer Armut und 2,2 Millionen Kinder sind akut unterernährt.';
-            var kongo = 'Mehr als 100 bewaffnete Gruppen kämpfen im Ostkongo um die Kontrolle und schüren damit eine seit Jahrzehnten andauernde Krise. Die Bevölkerung wird häufig zur Zielscheibe. Nach fast zehn Jahren der Ruhe startete die bewaffnete Gruppe M23 im Jahr 2022 eine neue Offensive, die Familien zur Flucht zwingt und die humanitäre Hilfe unterbricht. Große Krankheitsausbrüche - darunter Masern, Malaria und Ebola - bedrohen weiterhin das ohnehin schwache Gesundheitssystem und gefährden viele Menschenleben.';
-            var afghanistan = 'Afghanistan stand 2022 auf Platz 1 der Emergency Watchlist, ist aber für 2023 zurückgefallen. Nicht, weil sich die Bedingungen verbessert haben, sondern weil die Lage in Ostafrika sich so verschärft hat. Mehr als ein Jahr nach der Machtübernahme durch die Taliban befinden sich die Afghan*innen nach wie vor im wirtschaftlichen Kollaps. Zwar konnte durch eine rasche Aufstockung der Hilfe eine Hungersnot im letzten Winter verhindert werden. Doch die eigentliche Ursache der Krise bleibt bestehen. Fast die gesamte Bevölkerung lebt nun in Armut und bereitet sich auf einen weiteren langen Winter vor.';
-            var aethiopien = 'Äthiopien steuert auf die sechste ausgefallene Regenzeit in Folge zu. Dadurch könnte sich die Dürre, von der bereits 24 Millionen Menschen betroffen sind, verlängern Gleichzeitig bringen verschiedene Konflikte im ganzen Land das Leben der Menschen durcheinander und hindern humanitäre Organisationen daran, Hilfe zu leisten. Diese Gewalt hindert die Nichtregierungsorganisationen daran, lebensrettende Hilfe zu leisten. Auch wenn ein Friedensabkommen vom November 2022 Hoffnung auf ein Ende des Konflikts in Tigray im Norden Äthiopiens macht, sind 28,6 Millionen Menschen weiterhin auf humanitäre Hilfe angewiesen.';
-            var somalia = 'Somalia, das zum ersten Mal auf der Watchlist steht, ist von einer beispiellosen Dürre- und Hungerkrise betroffen. Tausende von Menschen sind bereits dem Hunger zum Opfer gefallen, und das Land steht am Rande einer Hungersnot. Dies ist keine "Naturkatastrophe". Der von Menschen verursachte Klimawandel hat die Häufigkeit und Schwere der Dürren erhöht. Jahrzehntelange Konflikte haben die Fähigkeit Somalias untergraben, auf Schocks jeglicher Art zu reagieren. Sie haben Systeme und Infrastrukturen zerstört, die einen Schutzwall gegen die aktuelle Krise geboten hätten. So hat sich beispielsweise die Abhängigkeit Somalias von Importen als katastrophal erwiesen: Die Nahrungsmittelproduktion des Landes wurde durch den Klimawandel und den Konflikt dezimiert. Über 90 Prozent des Weizens kommen aus Russland und der Ukraine.';
-
-            var aktuell = "";
-
-            if (id == 'wahl1Ueb' || id == 'wahl1Ab') aktuell = ukraine;
-            else if (id == 'wahl2Ueb' || id == 'wahl2Ab') aktuell = haiti;
-            else if (id == 'wahl3Ueb' || id == 'wahl3Ab') aktuell = burkinaFaso;
-            else if (id == 'wahl4Ueb' || id == 'wahl4Ab') aktuell = suedsudan;
-            else if (id == 'wahl5Ueb' || id == 'wahl5Ab') aktuell = syrien;
-            else if (id == 'wahl6Ueb' || id == 'wahl6Ab') aktuell = jemen;
-            else if (id == 'wahl7Ueb' || id == 'wahl7Ab') aktuell = kongo;
-            else if (id == 'wahl8Ueb' || id == 'wahl8Ab') aktuell = afghanistan;
-            else if (id == 'wahl9Ueb' || id == 'wahl9Ab') aktuell = aethiopien;
-            else if (id == 'wahl10Ueb' || id == 'wahl10Ab') aktuell = somalia;
-
-            document.getElementById('outputInfoAb').innerHTML = aktuell;
-            document.getElementById('outputInfoUeb').innerHTML = aktuell;
-        }
-        function getDate() {
-
-        }
-
-        function setAbForm() {
-            document.getElementById("uebForm").style.display = "none";
-            document.getElementById("abForm").style.display = "block";
-        }
-
-        function setUebForm() {
-            document.getElementById("abForm").style.display = "none";
-            document.getElementById("uebForm").style.display = "block";
-        }
-    </script>
 </head>
 
 <body>
@@ -94,7 +33,8 @@
         <div class="col-sm-6 hide-sml hide-md row justify-content-center list-unstyled d-flex mt-2">
             <h3 class="align-middle">Kleiderspende Magdeburg e.V.</h3>
         </div>
-        <div class="col-sm-3 btn-head-sml hide-sml hide-md row justify-content-end list-unstyled d-flex" style="display: none;">
+        <div class="col-sm-3 btn-head-sml hide-sml hide-md row justify-content-end list-unstyled d-flex"
+            style="display: none;">
             <a type="button" class="btn btn-success btn-lg" href="#anchor-spende">Jetzt spenden</a>
         </div>
     </header>
@@ -172,11 +112,14 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputDatumAb">Wunschtag<span style="color: #28a745;">*</span></label>
-                    <input type="date" id="inputDatumAb" onload="getDate()" class="form-control" required>
+                    <input id="inputDatumAb" type="date" class="form-control" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputUhrzeitAb">Wunschzeit<span style="color: #28a745;">*</span></label>
-                    <input type="time" class="form-control" id="inputUhrzeiAbt" required>
+                    <label for="inputUhrzeitAb">Wunschzeit</label><span style="color: #28a745;">*</span><label
+                        style="color: white;">.</label><label class="text-muted hide-md">Öffnungszeiten: 08:00 -
+                        17:00 (Halbstundentakt)</label>
+                    <input type="time" class="form-control" id="inputUhrzeiAbt" step="1800" min="08:00" max="17:00"
+                        required>
                 </div>
             </div>
             <div class="form-row">
@@ -318,7 +261,7 @@
                 </div>
             </div>
             <div class="form-group center-sml center-md">
-                <button type="submit" class="btn btn-success btn-lg m-2">Buchen</button>
+                <button type="submit" class="btn btn-success btn-lg m-2" onclick="datenValidieren();">Buchen</button>
             </div>
         </form>
         <!-- Formular Uebergabe -->
@@ -477,5 +420,102 @@
         </div>
     </footer>
 </body>
+
+<!-- jQuery 3.4.1 JavaScript library hinzufügen -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<!-- Popper.js 1.16.0 positioning engine hinzufügen -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+<!-- Bootstrap.js v4.4.1 JavaScript framework hinzufügen -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+<!-- JavaScript Anpassungen -->
+<script type="text/javascript">
+
+    function changeInfo(id) {
+        var ukraine = 'Der Konflikt wird wahrscheinlich bis ins Jahr 2023 andauern. Für Ukrainer * innen besteht ein erhöhtesRisiko für Verletzungen, Krankheiten und Tod.Durch russische Raketenangriffe könntenMillionen Menschen im Winter ohne Wasser, Strom und Heizung sein.Mehr als 6,5 Millionen Ukrainer * innen sind innerhalb des Landes vertrieben. 7,8 Millionen weitere Menschen sind in andere europäische Länder geflüchtet.';
+        var haiti = 'Bandengewalt wird weiterhin die Lebensgrundlagen der Menschen und lebenswichtige Dienstleistungen beeinträchtigen. Entführungen, geschlechtsspezifische Gewalt und Morde nehmen weiter zu. Haiti verzeichnete 2022 ein Rekordniveau an Ernährungsunsicherheit, das sich 2023 voraussichtlich noch verschlimmern wird. Gleichzeitig werden politische Unruhen und Gewalt humanitäre Organisationen auch 2023 daran hindern, Menschen in Not zu erreichen.';
+        var burkinaFaso = 'Die Lage in Burkina Faso wird immer schlimmer: Nichtstaatliche bewaffnete Gruppen verstärken ihre Angriffe und übernehmen immer weiter die Kontrolle. Die Spannungen zwischen den politischen Gruppierungen des Landes verursachen Instabilität. Allein im Jahr 2022 haben Mitglieder*innen der Streitkräfte zweimal die Macht übernommen. Bewaffnete Gruppen kontrollieren inzwischen bis zu 40 Prozent des Landes. Obwohl die Not groß ist, wird die humanitäre Hilfe durch Konflikte und fehlende Gelder eingeschränkt. Einige Städte im Norden Burkina Fasos sind fast vollständig von der Außenwelt abgeschnitten. Die Lebensmittelpreise sind um 30 Prozent gestiegen, eine der höchsten Inflationsraten der Welt.';
+        var suedsudan = 'Südsudan erholt sich noch von einem Bürgerkrieg, der im Jahr 2018 endete. Der Konflikt hat zwar abgenommen, aber die Kämpfe sind nach wie vor weit verbreitet. Das Land ist eines der fragilsten der Welt. Klimakatastrophen wie schwere Überschwemmungen und Dürren erschweren den Menschen zunehmend den Zugang zu Lebensmitteln und lebenswichtigen Ressourcen.';
+        var syrien = 'Mehr als ein Jahrzehnt Krieg hat das syrische Gesundheitssystem zerstört und das Land an den Rand des wirtschaftlichen Zusammenbruchs gebracht. Langjährige Konflikte im benachbarten Libanon haben zu einem weiteren Anstieg der Lebensmittelpreise und der Armut geführt. Derzeit sind 75 Prozent der Syrer*innen nicht in der Lage, ihre Grundbedürfnisse zu decken. Millionen von Menschen sind auf humanitäre Hilfe angewiesen.';
+        var jemen = 'Die Krise im Jemen verschärft sich und der seit acht Jahren andauernde Konflikt zwischen bewaffneten Gruppen und Regierungstruppen bleibt ungelöst. Ein Waffenstillstand dämmte die Kämpfe für einige Monate ein. Er brach aber im Oktober 2022 zusammen und konnte die wirtschaftlichen und gesundheitlichen Folgen des Konflikts nicht abmildern. Die Finanzierung der humanitären Hilfe hat sich verzögert. Gegenwärtig leben 80 Prozent der Bevölkerung in extremer Armut und 2,2 Millionen Kinder sind akut unterernährt.';
+        var kongo = 'Mehr als 100 bewaffnete Gruppen kämpfen im Ostkongo um die Kontrolle und schüren damit eine seit Jahrzehnten andauernde Krise. Die Bevölkerung wird häufig zur Zielscheibe. Nach fast zehn Jahren der Ruhe startete die bewaffnete Gruppe M23 im Jahr 2022 eine neue Offensive, die Familien zur Flucht zwingt und die humanitäre Hilfe unterbricht. Große Krankheitsausbrüche - darunter Masern, Malaria und Ebola - bedrohen weiterhin das ohnehin schwache Gesundheitssystem und gefährden viele Menschenleben.';
+        var afghanistan = 'Afghanistan stand 2022 auf Platz 1 der Emergency Watchlist, ist aber für 2023 zurückgefallen. Nicht, weil sich die Bedingungen verbessert haben, sondern weil die Lage in Ostafrika sich so verschärft hat. Mehr als ein Jahr nach der Machtübernahme durch die Taliban befinden sich die Afghan*innen nach wie vor im wirtschaftlichen Kollaps. Zwar konnte durch eine rasche Aufstockung der Hilfe eine Hungersnot im letzten Winter verhindert werden. Doch die eigentliche Ursache der Krise bleibt bestehen. Fast die gesamte Bevölkerung lebt nun in Armut und bereitet sich auf einen weiteren langen Winter vor.';
+        var aethiopien = 'Äthiopien steuert auf die sechste ausgefallene Regenzeit in Folge zu. Dadurch könnte sich die Dürre, von der bereits 24 Millionen Menschen betroffen sind, verlängern Gleichzeitig bringen verschiedene Konflikte im ganzen Land das Leben der Menschen durcheinander und hindern humanitäre Organisationen daran, Hilfe zu leisten. Diese Gewalt hindert die Nichtregierungsorganisationen daran, lebensrettende Hilfe zu leisten. Auch wenn ein Friedensabkommen vom November 2022 Hoffnung auf ein Ende des Konflikts in Tigray im Norden Äthiopiens macht, sind 28,6 Millionen Menschen weiterhin auf humanitäre Hilfe angewiesen.';
+        var somalia = 'Somalia, das zum ersten Mal auf der Watchlist steht, ist von einer beispiellosen Dürre- und Hungerkrise betroffen. Tausende von Menschen sind bereits dem Hunger zum Opfer gefallen, und das Land steht am Rande einer Hungersnot. Dies ist keine "Naturkatastrophe". Der von Menschen verursachte Klimawandel hat die Häufigkeit und Schwere der Dürren erhöht. Jahrzehntelange Konflikte haben die Fähigkeit Somalias untergraben, auf Schocks jeglicher Art zu reagieren. Sie haben Systeme und Infrastrukturen zerstört, die einen Schutzwall gegen die aktuelle Krise geboten hätten. So hat sich beispielsweise die Abhängigkeit Somalias von Importen als katastrophal erwiesen: Die Nahrungsmittelproduktion des Landes wurde durch den Klimawandel und den Konflikt dezimiert. Über 90 Prozent des Weizens kommen aus Russland und der Ukraine.';
+
+        var aktuell = "";
+
+        if (id == 'wahl1Ueb' || id == 'wahl1Ab') aktuell = ukraine;
+        else if (id == 'wahl2Ueb' || id == 'wahl2Ab') aktuell = haiti;
+        else if (id == 'wahl3Ueb' || id == 'wahl3Ab') aktuell = burkinaFaso;
+        else if (id == 'wahl4Ueb' || id == 'wahl4Ab') aktuell = suedsudan;
+        else if (id == 'wahl5Ueb' || id == 'wahl5Ab') aktuell = syrien;
+        else if (id == 'wahl6Ueb' || id == 'wahl6Ab') aktuell = jemen;
+        else if (id == 'wahl7Ueb' || id == 'wahl7Ab') aktuell = kongo;
+        else if (id == 'wahl8Ueb' || id == 'wahl8Ab') aktuell = afghanistan;
+        else if (id == 'wahl9Ueb' || id == 'wahl9Ab') aktuell = aethiopien;
+        else if (id == 'wahl10Ueb' || id == 'wahl10Ab') aktuell = somalia;
+
+        document.getElementById('outputInfoAb').innerHTML = aktuell;
+        document.getElementById('outputInfoUeb').innerHTML = aktuell;
+    }
+
+
+    function setAbForm() {
+        document.getElementById("uebForm").style.display = "none";
+        document.getElementById("abForm").style.display = "block";
+    }
+
+    function setUebForm() {
+        document.getElementById("abForm").style.display = "none";
+        document.getElementById("uebForm").style.display = "block";
+    }
+
+    //Wunschtermin Auswahl einschränken
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //Januar hat den index 0
+    var yyyy = today.getFullYear();
+    dd = dd + 1;
+    maxM = mm + 1;
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+    if (mm < 10) {
+        mm = '0' + mm;
+        maxM = '0' + maxM;
+    }
+    min = yyyy + '-' + mm + '-' + dd;
+    max = yyyy + '-' + maxM + '-' + dd;
+    document.getElementById("inputDatumAb").setAttribute("min", min);
+    document.getElementById("inputDatumAb").setAttribute("max", max);
+
+    function datenValidieren() {
+        var regName = /^[a-zA-Z]+$/;
+        var name = document.getElementById('name').value;
+        if (!regName.test(name)) {
+            alert('Please enter your full name (first & last name).');
+            document.getElementById('name').focus();
+            return false;
+        } else {
+            alert('Valid name given.');
+            return true;
+        }
+    }
+
+    function onlyLettersAndSpaces(str) {
+        return /^[A-Za-z\s]*$/.test(str);
+    }
+
+</script>
 
 </html>
