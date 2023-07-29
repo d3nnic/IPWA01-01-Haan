@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
 
-
-
 <head>
     <!-- Metadaten der Webanwendung -->
     <meta charset="utf-8">
@@ -126,32 +124,37 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputVornameAb">Vorname<span style="color: #28a745;">*</span></label>
-                    <input type="text" class="form-control" id="inputVornameAb" placeholder="Vorname" required>
+                    <input type="text" class="form-control" id="inputVornameAb" placeholder="Vorname" maxlength="20"
+                        required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputNachnameAb">Nachname<span style="color: #28a745;">*</span></label>
-                    <input type="text" class="form-control" id="inputNachnameAb" placeholder="Nachname" required>
+                    <input type="text" class="form-control" id="inputNachnameAb" placeholder="Nachname" maxlength="20"
+                        required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmailAb">Email<span style="color: #28a745;">*</span></label>
-                    <input type="email" class="form-control" id="inputEmailAb" placeholder="beispiel@mail.de" required>
+                    <input type="email" class="form-control" id="inputEmailAb" placeholder="beispiel@mail.de"
+                        maxlength="40" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputNachnameAb">Telefonnummer</label>
-                    <input type="tel" class="form-control" id="inputTelefonnummerAb" pattern="[0-9]"
+                    <input type="tel" class="form-control" id="inputTelefonnummerAb" maxlength="15"
                         placeholder="01765894111">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputStadtAb">Stadt<span style="color: #28a745;">*</span></label>
-                    <input type="text" class="form-control" id="inputStadtAb" placeholder="Magdeburg" required>
+                    <input type="text" class="form-control" id="inputStadtAb" placeholder="Magdeburg" maxlength="25"
+                        required>
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputPostleitzahlAb">Postleitzahl<span style="color: #28a745;">*</span></label>
-                    <input type="text" class="form-control" id="inputPostleitzahlAb" placeholder="39112" required>
+                    <input type="text" class="form-control" id="inputPostleitzahlAb" placeholder="39112" maxlength="5"
+                        minlength="5" required>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputBundeslandAb">Bundesland<span style="color: #28a745;">*</span></label>
@@ -262,7 +265,7 @@
                 </div>
             </div>
             <div class="form-group center-sml center-md">
-                <button type="submit" class="btn btn-success btn-lg m-2" onclick="datenValidieren();">Buchen</button>
+                <button type="submit" class="btn btn-success btn-lg m-2" onclick="validateData();">Buchen</button>
             </div>
         </form>
         <!-- Formular Uebergabe -->
@@ -500,21 +503,63 @@
     document.getElementById("inputDatumAb").setAttribute("min", min);
     document.getElementById("inputDatumAb").setAttribute("max", max);
 
-    function datenValidieren() {
-        var regName = /^[a-zA-Z]+$/;
-        var name = document.getElementById('name').value;
-        if (!regName.test(name)) {
-            alert('Please enter your full name (first & last name).');
-            document.getElementById('name').focus();
+    function validateData() {
+        if (!onlyLetters(document.getElementById('inputVornameAb').value)) {
+            alert('Bitte einen gültigen Vornamen angeben');
+            return false;
+        }
+        if (!onlyLetters(document.getElementById('inputNachnameAb').value)) {
+            alert('Bitte einen gültigen Nachname angeben');
+            return false;
+        }
+
+        if (!onlyNumbers(document.getElementById('inputTelefonnummerAb').value)) {
+            alert('Bitte eine gültige Telefonnummer angeben');
+            return false;
+        }
+
+        if (!onlyLetters(document.getElementById('inputStadtAb').value)) {
+            alert('Bitte eine gültige Stadt angeben');
+            return false;
+        }
+
+        if (!onlyNumbers(document.getElementById('inputPostleitzahlAb').value)) {
+            alert('Bitte eine gültige Postleitzahl angeben');
+            return false;
+        }
+
+        if (!onlyAddress(document.getElementById('inputStrasseAb').value)) {
+            alert('Bitte eine gültige Straße angeben');
+            return false;
+        }
+        return true;
+    }
+
+    function onlyLetters(input) {
+        const regLetters = /^[a-zA-ZäöüÄÖÜß]+$/;
+        if (!regLetters.test(input)) {
             return false;
         } else {
-            alert('Valid name given.');
             return true;
         }
     }
 
-    function onlyLettersAndSpaces(str) {
-        return /^[A-Za-z\s]*$/.test(str);
+    function onlyNumbers(input) {
+        const regLetters = /^[0-9]+$/;
+        if (!regLetters.test(input)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function onlyAddress(input) {
+        const regLetters = /^[A-Za-z]+.*[A-Za-z]+.*[0-9]+$/;
+        if (!regLetters.test(input)) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 </script>
