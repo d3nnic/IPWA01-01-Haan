@@ -62,7 +62,7 @@
             </div>
         </nav>
         <div class="card mt-4 d-flex">
-            <img src="bilder/flowers.jpg" class="card-img img-fluid img-trans" alt="Stony Beach" />
+            <img src="bilder/flowers.jpg" class="card-img img-fluid img-trans" alt="flowers" />
             <div class="card-img-overlay">
                 <h1 class="card-title font-weight-bold title-font-sml title-font-md p-5 m-4" style="font-size:350%;">
                     Wir helfen Bedürftigen,<br>
@@ -103,7 +103,7 @@
             </div>
         </div>
         <!-- Formular Abholung -->
-        <form action="ueberblick.html" method="get" id="abForm" style="display: none;">
+        <form id="abForm" style="display: none;">
             <div class="form-group">
                 <h1 id="anchor-abForm">Fromular zur Abholung</h1>
                 <h5>Wähle deinen Wunschtermin und wir holen kostenlos deine Altkleider ab!</h5>
@@ -117,7 +117,7 @@
                     <label for="inputUhrzeitAb">Wunschzeit</label><span style="color: #28a745;">*</span><label
                         style="color: white;">.</label><label class="text-muted hide-md">Öffnungszeiten: 08:00 -
                         17:00 (Halbstundentakt)</label>
-                    <input type="time" class="form-control" id="inputUhrzeiAbt" step="1800" min="08:00" max="17:00"
+                    <input type="time" class="form-control" id="inputUhrzeitAb" step="1800" min="08:00" max="17:00"
                         required>
                 </div>
             </div>
@@ -192,44 +192,36 @@
                     <label for="inputKrisengebietAb">In welches Krisengebiet soll geliefert werden?
                         <span style="color: #28a745;">*</span></label>
                     <label class="btn btn-light border rounded btn-lg active">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl1Ab"
-                            autocomplete="off" checked> Ukraine
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl1Ab" checked>
+                        Ukraine
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl2Ab"
-                            autocomplete="off"> Haiti
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl2Ab"> Haiti
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl3Ab"
-                            autocomplete="off"> Burkina Faso
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl3Ab"> Burkina Faso
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl4Ab"
-                            autocomplete="off"> Südsudan
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl4Ab"> Südsudan
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl5Ab"
-                            autocomplete="off"> Syrien
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl5Ab"> Syrien
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl6Ab"
-                            autocomplete="off"> Jemen
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl6Ab"> Jemen
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl7Ab"
-                            autocomplete="off"> Demokratische Republik Kongo
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl7Ab">
+                        Demokratische Republik Kongo
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl8Ab"
-                            autocomplete="off"> Afghanistan
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl8Ab"> Afghanistan
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl9Ab"
-                            autocomplete="off"> Äthiopien
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl9Ab"> Äthiopien
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl10Ab"
-                            autocomplete="off"> Somalia
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl10Ab"> Somalia
                     </label>
                 </div>
                 <div class="orm-group col-md-6 list-group pl-2">
@@ -265,7 +257,7 @@
                 </div>
             </div>
             <div class="form-group center-sml center-md">
-                <button type="submit" class="btn btn-success btn-lg m-2" onclick="validateData();">Buchen</button>
+                <button type="submit" class="btn btn-success btn-lg m-2">Buchen</button>
             </div>
         </form>
         <!-- Formular Uebergabe -->
@@ -285,43 +277,36 @@
                         <span style="color: #28a745;">*</span></label>
                     <label class="btn btn-light border rounded btn-lg active">
                         <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl1Ueb"
-                            autocomplete="off" checked> Ukraine
+                            value="Ukraine" checked> Ukraine
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl2Ueb"
-                            autocomplete="off"> Haiti
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl2Ueb"> Haiti
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl3Ueb"
-                            autocomplete="off"> Burkina Faso
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl3Ueb"> Burkina
+                        Faso
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl4Ueb"
-                            autocomplete="off"> Südsudan
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl4Ueb"> Südsudan
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl5Ueb"
-                            autocomplete="off"> Syrien
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl5Ueb"> Syrien
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl6Ueb"
-                            autocomplete="off"> Jemen
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl6Ueb"> Jemen
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl7Ueb"
-                            autocomplete="off"> Demokratische Republik Kongo
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl7Ueb">
+                        Demokratische Republik Kongo
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl8Ueb"
-                            autocomplete="off"> Afghanistan
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl8Ueb"> Afghanistan
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl9Ueb"
-                            autocomplete="off"> Äthiopien
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl9Ueb"> Äthiopien
                     </label>
                     <label class="btn btn-light border rounded btn-lg">
-                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl10Ueb"
-                            autocomplete="off"> Somalia
+                        <input type="radio" name="inputKrisengebiet" onclick="changeInfo(id)" id="wahl10Ueb"> Somalia
                     </label>
                 </div>
                 <div class="orm-group col-md-6 list-group pl-2">
@@ -355,12 +340,6 @@
                         e.V. zu.
                     </label>
                 </div>
-                <input type="radio" id="html" name="fav_language" value="HTML">
-                <label for="html">HTML</label><br>
-                <input type="radio" id="css" name="fav_language" value="CSS">
-                <label for="css">CSS</label><br>
-                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                <label for="javascript">JavaScript</label>
             </div>
             <div class="form-group center-sml center-md">
                 <button type="submit" class="btn btn-success btn-lg m-2">Buchen</button>
@@ -452,6 +431,8 @@
 
     //Variablen
     var dataValid;
+    var krisengebiet = 'Ukraine';
+    var dataValid;
 
     //Informationen zu den Krisengebieten anzeigen
     function changeInfo(id) {
@@ -466,16 +447,46 @@
         var aethiopien = 'Äthiopien steuert auf die sechste ausgefallene Regenzeit in Folge zu. Dadurch könnte sich die Dürre, von der bereits 24 Millionen Menschen betroffen sind, verlängern Gleichzeitig bringen verschiedene Konflikte im ganzen Land das Leben der Menschen durcheinander und hindern humanitäre Organisationen daran, Hilfe zu leisten. Diese Gewalt hindert die Nichtregierungsorganisationen daran, lebensrettende Hilfe zu leisten. Auch wenn ein Friedensabkommen vom November 2022 Hoffnung auf ein Ende des Konflikts in Tigray im Norden Äthiopiens macht, sind 28,6 Millionen Menschen weiterhin auf humanitäre Hilfe angewiesen.';
         var somalia = 'Somalia, das zum ersten Mal auf der Watchlist steht, ist von einer beispiellosen Dürre- und Hungerkrise betroffen. Tausende von Menschen sind bereits dem Hunger zum Opfer gefallen, und das Land steht am Rande einer Hungersnot. Dies ist keine "Naturkatastrophe". Der von Menschen verursachte Klimawandel hat die Häufigkeit und Schwere der Dürren erhöht. Jahrzehntelange Konflikte haben die Fähigkeit Somalias untergraben, auf Schocks jeglicher Art zu reagieren. Sie haben Systeme und Infrastrukturen zerstört, die einen Schutzwall gegen die aktuelle Krise geboten hätten. So hat sich beispielsweise die Abhängigkeit Somalias von Importen als katastrophal erwiesen: Die Nahrungsmittelproduktion des Landes wurde durch den Klimawandel und den Konflikt dezimiert. Über 90 Prozent des Weizens kommen aus Russland und der Ukraine.';
 
-        if (id == 'wahl1Ueb' || id == 'wahl1Ab') aktuell = ukraine;
-        else if (id == 'wahl2Ueb' || id == 'wahl2Ab') aktuell = haiti;
-        else if (id == 'wahl3Ueb' || id == 'wahl3Ab') aktuell = burkinaFaso;
-        else if (id == 'wahl4Ueb' || id == 'wahl4Ab') aktuell = suedsudan;
-        else if (id == 'wahl5Ueb' || id == 'wahl5Ab') aktuell = syrien;
-        else if (id == 'wahl6Ueb' || id == 'wahl6Ab') aktuell = jemen;
-        else if (id == 'wahl7Ueb' || id == 'wahl7Ab') aktuell = kongo;
-        else if (id == 'wahl8Ueb' || id == 'wahl8Ab') aktuell = afghanistan;
-        else if (id == 'wahl9Ueb' || id == 'wahl9Ab') aktuell = aethiopien;
-        else if (id == 'wahl10Ueb' || id == 'wahl10Ab') aktuell = somalia;
+        if (id == 'wahl1Ueb' || id == 'wahl1Ab') {
+            aktuell = ukraine;
+            krisengebiet = 'Ukraine';
+        }
+        else if (id == 'wahl2Ueb' || id == 'wahl2Ab') {
+            aktuell = haiti;
+            krisengebiet = 'Haiti';
+        }
+        else if (id == 'wahl3Ueb' || id == 'wahl3Ab') {
+            aktuell = burkinaFaso;
+            krisengebiet = "Burkina Faso";
+        }
+        else if (id == 'wahl4Ueb' || id == 'wahl4Ab') {
+            aktuell = suedsudan;
+            krisengebiet = 'Südsodan';
+        }
+        else if (id == 'wahl5Ueb' || id == 'wahl5Ab') {
+            aktuell = syrien;
+            krisengebiet = 'Syrien';
+        }
+        else if (id == 'wahl6Ueb' || id == 'wahl6Ab') {
+            aktuell = jemen;
+            krisengebiet = 'Jemen';
+        }
+        else if (id == 'wahl7Ueb' || id == 'wahl7Ab') {
+            aktuell = kongo;
+            krisengebiet = "Demokratische Republik Kongo";
+        }
+        else if (id == 'wahl8Ueb' || id == 'wahl8Ab') {
+            aktuell = afghanistan;
+            krisengebiet = 'Afghanistan';
+        }
+        else if (id == 'wahl9Ueb' || id == 'wahl9Ab') {
+            aktuell = aethiopien;
+            krisengebiet = 'Aethiopien';
+        }
+        else if (id == 'wahl10Ueb' || id == 'wahl10Ab') {
+            aktuell = somalia;
+            krisengebiet = 'Somalia';
+        }
 
         document.getElementById('outputInfoAb').innerHTML = aktuell;
         document.getElementById('outputInfoUeb').innerHTML = aktuell;
@@ -513,7 +524,8 @@
 
     //Eingabedaten validieren und Information zu falschen Eingaben anzeigen
     function validateData() {
-        var dataValid = false;
+        var plz;
+        dataValid = false;
         if (!onlyLetters(document.getElementById('inputVornameAb').value)) {
             alert('Bitte einen gültigen Vornamen angeben');
             return false;
@@ -533,8 +545,14 @@
             return false;
         }
 
-        if (!onlyNumbers(document.getElementById('inputPostleitzahlAb').value)) {
+        if (!onlyNumbers(plz = document.getElementById('inputPostleitzahlAb').value)) {
             alert('Bitte eine gültige Postleitzahl angeben');
+            return false;
+        }
+
+        //prüfe Postleitzahl: ersten 2 Nummern = 39
+        if (!(plz.charAt(0) == 3 && plz.charAt(1) == 9)) {
+            alert('Die angegebene Adresse ist leider zu weit entfernt für eine Abholung');
             return false;
         }
 
@@ -542,7 +560,7 @@
             alert('Bitte eine gültige Straße angeben');
             return false;
         }
-        var dataValid = true;
+        dataValid = true;
     }
 
     //Regulärer Ausdruck (regex)
@@ -573,18 +591,66 @@
         }
     }
 
-    //Formular Eingabe verarbeiten und mit JSON auf nächste Seite transferieren  
+    //Formular Eingabe verarbeiten und mit JSON auf nächste Seite transferieren
+
+    //Abholung Objekt mit Daten erstellen und lokal speichern
+    const abForm = document.getElementById('abForm');
+    const datum = document.getElementById('inputDatumAb');
+    const uhrzeit = document.getElementById('inputUhrzeitAb');
+    const vorname = document.getElementById('inputVornameAb');
+    const nachname = document.getElementById('inputNachnameAb');
+    const email = document.getElementById('inputEmailAb');
+    const tel = document.getElementById('inputTelefonnummerAb');
+    const stadt = document.getElementById('inputStadtAb');
+    const plz = document.getElementById('inputPostleitzahlAb');
+    const bundesland = document.getElementById('inputBundeslandAb');
+    const strasse = document.getElementById('inputStrasseAb');
+    const kleidungAb = document.getElementById('inputKleidungAb');
+
+    abForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        validateData();
+        if (dataValid) {
+            const da = datum.value;
+            const uh = uhrzeit.value;
+            const vo = vorname.value;
+            const na = nachname.value;
+            const em = email.value;
+            const te = tel.value;
+            const pl = plz.value;
+            const sta = stadt.value;
+            const bu = bundesland.value;
+            const str = strasse.value;
+            const kl = kleidungAb.value;
+
+            sessionStorage.setItem('datenAb', JSON.stringify({
+                datum: da,
+                uhrzeit: uh,
+                vorname: vo,
+                nachname: na,
+                email: em,
+                tel: te,
+                plz: pl,
+                stadt: sta,
+                bundesland: bu,
+                strasse: str,
+                kleidungAb: kl,
+                krisengebietAb: krisengebiet
+            }));
+            window.location.href = "/ueberblick.html";
+        }
+    })
+
+    //Übergabe an der Geschäftsstelle Objekt mit Daten erstellen und lokal speichern
     const uebForm = document.getElementById('uebForm');
-    const KleidungUeb = document.getElementById('inputKleidungUeb');
-    const krisengebietUeb = document.querySelector('input[name="inputKrisengebiet"]:checked').value;
+    const kleidungUeb = document.getElementById('inputKleidungUeb');
 
     uebForm.addEventListener('submit', function (e) {
         e.preventDefault();
-
-        const kleidung = KleidungUeb.value;
-        const krisengebiet = krisengebietUeb.value;
-
-        sessionStorage.setItem('data', JSON.stringify([kleidung, krisengebietUeb]));
+        const kl = kleidungUeb.value;
+        sessionStorage.setItem('datenUeb', JSON.stringify({ kleidung: kl, krisengebiet: krisengebiet }));
+        window.location.href = "/ueberblick.html";
+        console.log('debug1');
     })
 
 </script>
