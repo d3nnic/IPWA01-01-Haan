@@ -269,7 +269,7 @@
             </div>
         </form>
         <!-- Formular Uebergabe -->
-        <form action="/ueberblick.html" method="get" id="uebForm" style="display: none;">
+        <form id="uebForm" style="display: none;">
             <div class="form-group">
                 <h1 id="anchor-uebForm">Formular zu Übergabe an der Geschäftsstelle</h1>
                 <h5>Hier bitte den Kleidungs Typ und die Menge angeben!</h5>
@@ -355,6 +355,12 @@
                         e.V. zu.
                     </label>
                 </div>
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">HTML</label><br>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css">CSS</label><br>
+                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
             </div>
             <div class="form-group center-sml center-md">
                 <button type="submit" class="btn btn-success btn-lg m-2">Buchen</button>
@@ -444,6 +450,10 @@
 <!-- JavaScript Anpassungen -->
 <script type="text/javascript">
 
+    //Variablen
+    var dataValid;
+
+    //Informationen zu den Krisengebieten anzeigen
     function changeInfo(id) {
         var ukraine = 'Der Konflikt wird wahrscheinlich bis ins Jahr 2023 andauern. Für Ukrainer * innen besteht ein erhöhtesRisiko für Verletzungen, Krankheiten und Tod.Durch russische Raketenangriffe könntenMillionen Menschen im Winter ohne Wasser, Strom und Heizung sein.Mehr als 6,5 Millionen Ukrainer * innen sind innerhalb des Landes vertrieben. 7,8 Millionen weitere Menschen sind in andere europäische Länder geflüchtet.';
         var haiti = 'Bandengewalt wird weiterhin die Lebensgrundlagen der Menschen und lebenswichtige Dienstleistungen beeinträchtigen. Entführungen, geschlechtsspezifische Gewalt und Morde nehmen weiter zu. Haiti verzeichnete 2022 ein Rekordniveau an Ernährungsunsicherheit, das sich 2023 voraussichtlich noch verschlimmern wird. Gleichzeitig werden politische Unruhen und Gewalt humanitäre Organisationen auch 2023 daran hindern, Menschen in Not zu erreichen.';
@@ -455,8 +465,6 @@
         var afghanistan = 'Afghanistan stand 2022 auf Platz 1 der Emergency Watchlist, ist aber für 2023 zurückgefallen. Nicht, weil sich die Bedingungen verbessert haben, sondern weil die Lage in Ostafrika sich so verschärft hat. Mehr als ein Jahr nach der Machtübernahme durch die Taliban befinden sich die Afghan*innen nach wie vor im wirtschaftlichen Kollaps. Zwar konnte durch eine rasche Aufstockung der Hilfe eine Hungersnot im letzten Winter verhindert werden. Doch die eigentliche Ursache der Krise bleibt bestehen. Fast die gesamte Bevölkerung lebt nun in Armut und bereitet sich auf einen weiteren langen Winter vor.';
         var aethiopien = 'Äthiopien steuert auf die sechste ausgefallene Regenzeit in Folge zu. Dadurch könnte sich die Dürre, von der bereits 24 Millionen Menschen betroffen sind, verlängern Gleichzeitig bringen verschiedene Konflikte im ganzen Land das Leben der Menschen durcheinander und hindern humanitäre Organisationen daran, Hilfe zu leisten. Diese Gewalt hindert die Nichtregierungsorganisationen daran, lebensrettende Hilfe zu leisten. Auch wenn ein Friedensabkommen vom November 2022 Hoffnung auf ein Ende des Konflikts in Tigray im Norden Äthiopiens macht, sind 28,6 Millionen Menschen weiterhin auf humanitäre Hilfe angewiesen.';
         var somalia = 'Somalia, das zum ersten Mal auf der Watchlist steht, ist von einer beispiellosen Dürre- und Hungerkrise betroffen. Tausende von Menschen sind bereits dem Hunger zum Opfer gefallen, und das Land steht am Rande einer Hungersnot. Dies ist keine "Naturkatastrophe". Der von Menschen verursachte Klimawandel hat die Häufigkeit und Schwere der Dürren erhöht. Jahrzehntelange Konflikte haben die Fähigkeit Somalias untergraben, auf Schocks jeglicher Art zu reagieren. Sie haben Systeme und Infrastrukturen zerstört, die einen Schutzwall gegen die aktuelle Krise geboten hätten. So hat sich beispielsweise die Abhängigkeit Somalias von Importen als katastrophal erwiesen: Die Nahrungsmittelproduktion des Landes wurde durch den Klimawandel und den Konflikt dezimiert. Über 90 Prozent des Weizens kommen aus Russland und der Ukraine.';
-
-        var aktuell = "";
 
         if (id == 'wahl1Ueb' || id == 'wahl1Ab') aktuell = ukraine;
         else if (id == 'wahl2Ueb' || id == 'wahl2Ab') aktuell = haiti;
@@ -473,7 +481,7 @@
         document.getElementById('outputInfoUeb').innerHTML = aktuell;
     }
 
-
+    //gewähltes Formular anzeigen
     function setAbForm() {
         document.getElementById("uebForm").style.display = "none";
         document.getElementById("abForm").style.display = "block";
@@ -503,7 +511,9 @@
     document.getElementById("inputDatumAb").setAttribute("min", min);
     document.getElementById("inputDatumAb").setAttribute("max", max);
 
+    //Eingabedaten validieren und Information zu falschen Eingaben anzeigen
     function validateData() {
+        var dataValid = false;
         if (!onlyLetters(document.getElementById('inputVornameAb').value)) {
             alert('Bitte einen gültigen Vornamen angeben');
             return false;
@@ -532,9 +542,10 @@
             alert('Bitte eine gültige Straße angeben');
             return false;
         }
-        return true;
+        var dataValid = true;
     }
 
+    //Regulärer Ausdruck (regex)
     function onlyLetters(input) {
         const regLetters = /^[a-zA-ZäöüÄÖÜß]+$/;
         if (!regLetters.test(input)) {
@@ -561,6 +572,20 @@
             return true;
         }
     }
+
+    //Formular Eingabe verarbeiten und mit JSON auf nächste Seite transferieren  
+    const uebForm = document.getElementById('uebForm');
+    const KleidungUeb = document.getElementById('inputKleidungUeb');
+    const krisengebietUeb = document.querySelector('input[name="inputKrisengebiet"]:checked').value;
+
+    uebForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const kleidung = KleidungUeb.value;
+        const krisengebiet = krisengebietUeb.value;
+
+        sessionStorage.setItem('data', JSON.stringify([kleidung, krisengebietUeb]));
+    })
 
 </script>
 
