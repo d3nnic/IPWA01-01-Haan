@@ -623,7 +623,7 @@
             const str = strasse.value;
             const kl = kleidungAb.value;
 
-            sessionStorage.setItem('datenAb', JSON.stringify({
+            localStorage.setItem('datenAb', JSON.stringify({
                 datum: da,
                 uhrzeit: uh,
                 vorname: vo,
@@ -648,7 +648,7 @@
     uebForm.addEventListener('submit', function (e) {
         e.preventDefault();
         const kl = kleidungUeb.value;
-        sessionStorage.setItem('datenUeb', JSON.stringify({ kleidung: kl, krisengebiet: krisengebiet }));
+        localStorage.setItem('datenUeb', JSON.stringify({ kleidung: kl, krisengebiet: krisengebiet }));
         window.location.href = "/ueberblick.html";
         console.log('debug1');
     })

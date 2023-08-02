@@ -264,8 +264,8 @@
 
 <!-- JavaScript -->
 <script type="text/javascript">
-    if (sessionStorage.getItem('datenAb')) {
-        var daten = JSON.parse(sessionStorage.getItem('datenAb'));
+    if (localStorage.getItem('datenAb')) {
+        var daten = JSON.parse(localStorage.getItem('datenAb'));
         document.getElementById('datum').innerHTML = daten.datum;
         document.getElementById('uhrzeit').innerHTML = daten.uhrzeit;
         document.getElementById('vorname').innerHTML = daten.vorname;
@@ -280,8 +280,8 @@
         document.getElementById('krisengebiet').innerHTML = daten.krisengebietAb;
     }
 
-    if (sessionStorage.getItem('datenUeb')) {
-        var daten = JSON.parse(sessionStorage.getItem('datenUeb'));
+    if (localStorage.getItem('datenUeb')) {
+        var daten = JSON.parse(localStorage.getItem('datenUeb'));
         document.getElementById('divDatum').style.display = "none";
         document.getElementById('divUhrzeit').style.display = "none";
         document.getElementById('divVorname').style.display = "none";
@@ -302,7 +302,7 @@
     btnSenden.addEventListener('click', function () {
         document.getElementById("infoCard").style.display = "none";
         document.getElementById("finalScreen").style.display = "block";
-        sessionStorage.clear();
+        localStorage.clear();
     });
 </script>
 
