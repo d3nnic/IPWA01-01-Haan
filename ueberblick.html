@@ -282,17 +282,16 @@
 
     if (localStorage.getItem('datenUeb')) {
         var daten = JSON.parse(localStorage.getItem('datenUeb'));
-        document.getElementById('divDatum').style.display = "none";
-        document.getElementById('divUhrzeit').style.display = "none";
-        document.getElementById('divVorname').style.display = "none";
-        document.getElementById('divNachname').style.display = "none";
-        document.getElementById('divEmail').style.display = "none";
-        document.getElementById('divTel').style.display = "none";
-        document.getElementById('divPlz').style.display = "none";
-        document.getElementById('divStadt').style.display = "none";
-        document.getElementById('divBundesland').style.display = "none";
-        document.getElementById('divStrasse').style.display = "none";
-        document.getElementById('divStrasse').style.display = "none";
+        $('#divDatum').hide();
+        $('#divUhrzeit').hide();
+        $('#divVorname').hide();
+        $('#divNachname').hide();
+        $('#divEmail').hide();
+        $('#divTel').hide();
+        $('#divPlz').hide();
+        $('#divStadt').hide();
+        $('#divBundesland').hide();
+        $('#divStrasse').hide();
         document.getElementById('imgCard').setAttribute("src", "bilder/puerbergabe.jpeg")
         document.getElementById('kleidung').innerHTML = daten.kleidung;
         document.getElementById('krisengebiet').innerHTML = daten.krisengebiet;
@@ -300,8 +299,8 @@
 
     const btnSenden = document.getElementById('btnSenden');
     btnSenden.addEventListener('click', function () {
-        document.getElementById("infoCard").style.display = "none";
-        document.getElementById("finalScreen").style.display = "block";
+        $('#infoCard').hide();
+        $('#finalScreen').show();
         localStorage.clear();
     });
 </script>

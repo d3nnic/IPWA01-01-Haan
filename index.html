@@ -488,19 +488,19 @@
             krisengebiet = 'Somalia';
         }
 
-        document.getElementById('outputInfoAb').innerHTML = aktuell;
-        document.getElementById('outputInfoUeb').innerHTML = aktuell;
+        $("#outputInfoAb").html(aktuell);
+        $("#outputInfoUeb").html(aktuell);
     }
 
     //gewähltes Formular anzeigen
     function setAbForm() {
-        document.getElementById("uebForm").style.display = "none";
-        document.getElementById("abForm").style.display = "block";
+        $('#uebForm').hide();
+        $('#abForm').show();
     }
 
     function setUebForm() {
-        document.getElementById("abForm").style.display = "none";
-        document.getElementById("uebForm").style.display = "block";
+        $('#abForm').hide();
+        $('#uebForm').show();
     }
 
     //Wunschtermin Auswahl einschränken
@@ -519,14 +519,16 @@
     }
     min = yyyy + '-' + mm + '-' + dd;
     max = yyyy + '-' + maxM + '-' + dd;
-    document.getElementById("inputDatumAb").setAttribute("min", min);
-    document.getElementById("inputDatumAb").setAttribute("max", max);
+
+    //mindestens der nächste Tag und maximal in 30 Tagen 
+    $("#inputDatumAb").attr("min",min);
+    $("#inputDatumAb").attr("max",max);
 
     //Eingabedaten validieren und Information zu falschen Eingaben anzeigen
     function validateData() {
         var plz;
         dataValid = false;
-        if (!onlyLetters(document.getElementById('inputVornameAb').value)) {
+        if (!onlyLetters($("#inputVornameAb").val())) {
             alert('Bitte einen gültigen Vornamen angeben');
             return false;
         }
