@@ -84,7 +84,7 @@
                     <div class="card-body">
                         <div class="card-title text-muted text-center">
                             <h4>Übersicht der Eingabe</h4>
-                            <label class="text-muted">Bitte prüfen Sie ihre Angaben und klicken Sie auf senden</label>
+                            <label class="text-muted">Bitte prüfen Sie ihre Angaben und klicken Sie auf Senden</label>
                         </div>
                         <div class="card-text">
                             <div id="divDatum" class="row">
@@ -264,26 +264,42 @@
 
 <!-- JavaScript -->
 <script type="text/javascript">
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    var minutes = today.getMinutes();
+    var hours = today.getHours();
+
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+    if (minutes < 10) minutes = '0' + minutes;
+    if (hours < 10) hours = '0' + hours;
+
+    day = dd + '.' + mm + '.' + yyyy;
+    time = hours + ':' + minutes;
+
     if (localStorage.getItem('datenAb')) {
         var daten = JSON.parse(localStorage.getItem('datenAb'));
-        document.getElementById('datum').innerHTML = daten.datum;
-        document.getElementById('uhrzeit').innerHTML = daten.uhrzeit;
-        document.getElementById('vorname').innerHTML = daten.vorname;
-        document.getElementById('nachname').innerHTML = daten.nachname;
-        document.getElementById('email').innerHTML = daten.email;
-        document.getElementById('tel').innerHTML = daten.tel;
-        document.getElementById('plz').innerHTML = daten.plz;
-        document.getElementById('stadt').innerHTML = daten.stadt;
-        document.getElementById('bundesland').innerHTML = daten.bundesland;
-        document.getElementById('strasse').innerHTML = daten.strasse;
-        document.getElementById('kleidung').innerHTML = daten.kleidungAb;
-        document.getElementById('krisengebiet').innerHTML = daten.krisengebietAb;
+        $("#datum").html(daten.datum);
+        $("#uhrzeit").html(daten.uhrzeit);
+        $("#vorname").html(daten.vorname);
+        $("#nachname").html(daten.nachname);
+        $("#email").html(daten.email);
+        $("#tel").html(daten.tel);
+        $("#plz").html(daten.plz);
+        $("#stadt").html(daten.stadt);
+        $("#bundesland").html(daten.bundesland);
+        $("#strasse").html(daten.strasse);
+        $("#kleidung").html(daten.kleidungAb);
+        $("#krisengebiet").html(daten.krisengebietAb);
     }
 
     if (localStorage.getItem('datenUeb')) {
         var daten = JSON.parse(localStorage.getItem('datenUeb'));
-        $('#divDatum').hide();
-        $('#divUhrzeit').hide();
+        $('#datum').html(day);
+        $('#uhrzeit').html(time);
         $('#divVorname').hide();
         $('#divNachname').hide();
         $('#divEmail').hide();
@@ -292,9 +308,9 @@
         $('#divStadt').hide();
         $('#divBundesland').hide();
         $('#divStrasse').hide();
-        document.getElementById('imgCard').setAttribute("src", "bilder/puerbergabe.jpeg")
-        document.getElementById('kleidung').innerHTML = daten.kleidung;
-        document.getElementById('krisengebiet').innerHTML = daten.krisengebiet;
+        $("#imgCard").attr("src", "bilder/puerbergabe.jpeg");
+        $("#kleidung").html(daten.kleidung);
+        $("#krisengebiet").html(daten.krisengebiet);
     }
 
     const btnSenden = document.getElementById('btnSenden');

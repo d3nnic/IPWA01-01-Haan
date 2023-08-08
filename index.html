@@ -532,22 +532,22 @@
             alert('Bitte einen gültigen Vornamen angeben');
             return false;
         }
-        if (!onlyLetters(document.getElementById('inputNachnameAb').value)) {
+        if (!onlyLetters($("#inputNachnameAb").val())) {
             alert('Bitte einen gültigen Nachname angeben');
             return false;
         }
 
-        if (!onlyNumbers(document.getElementById('inputTelefonnummerAb').value)) {
+        if (!onlyNumbers($("#inputTelefonnummerAb").val())) {
             alert('Bitte eine gültige Telefonnummer angeben');
             return false;
         }
 
-        if (!onlyLetters(document.getElementById('inputStadtAb').value)) {
+        if (!onlyLetters($("#inputStadtAb").val())) {
             alert('Bitte eine gültige Stadt angeben');
             return false;
         }
 
-        if (!onlyNumbers(plz = document.getElementById('inputPostleitzahlAb').value)) {
+        if (!onlyNumbers(plz = $("#inputPostleitzahlAb").val())) {
             alert('Bitte eine gültige Postleitzahl angeben');
             return false;
         }
@@ -558,7 +558,7 @@
             return false;
         }
 
-        if (!onlyAddress(document.getElementById('inputStrasseAb').value)) {
+        if (!onlyAddress($("#inputStrasseAb").val())) {
             alert('Bitte eine gültige Straße angeben');
             return false;
         }
@@ -596,34 +596,36 @@
     //Formular Eingabe verarbeiten und mit JSON auf nächste Seite transferieren
 
     //Abholung Objekt mit Daten erstellen und lokal speichern
-    const abForm = document.getElementById('abForm');
-    const datum = document.getElementById('inputDatumAb');
-    const uhrzeit = document.getElementById('inputUhrzeitAb');
-    const vorname = document.getElementById('inputVornameAb');
-    const nachname = document.getElementById('inputNachnameAb');
-    const email = document.getElementById('inputEmailAb');
-    const tel = document.getElementById('inputTelefonnummerAb');
-    const stadt = document.getElementById('inputStadtAb');
-    const plz = document.getElementById('inputPostleitzahlAb');
-    const bundesland = document.getElementById('inputBundeslandAb');
-    const strasse = document.getElementById('inputStrasseAb');
-    const kleidungAb = document.getElementById('inputKleidungAb');
+    
+    const datum = $("#inputDatumAb");
+    
+    const uhrzeit = $("#inputUhrzeitAb");
+    const vorname = $("#inputVornameAb");
+    const nachname = $("#inputNachnameAb");
+    const email = $("#inputEmailAb");
+    const tel = $("#inputTelefonnummerAb");
+    const stadt = $("#inputStadtAb");
+    const plz = $("#inputPostleitzahlAb");
+    const bundesland = $("#inputBundeslandAb");
+    const strasse = $("#inputStrasseAb");
+    const kleidungAb = $("#inputKleidungAb");
 
+    const abForm = document.getElementById('abForm');
     abForm.addEventListener('submit', function (e) {
         e.preventDefault();
         validateData();
         if (dataValid) {
-            const da = datum.value;
-            const uh = uhrzeit.value;
-            const vo = vorname.value;
-            const na = nachname.value;
-            const em = email.value;
-            const te = tel.value;
-            const pl = plz.value;
-            const sta = stadt.value;
-            const bu = bundesland.value;
-            const str = strasse.value;
-            const kl = kleidungAb.value;
+            const da = datum.val();
+            const uh = uhrzeit.val();
+            const vo = vorname.val();
+            const na = nachname.val();
+            const em = email.val();
+            const te = tel.val();
+            const pl = plz.val();
+            const sta = stadt.val();
+            const bu = bundesland.val();
+            const str = strasse.val();
+            const kl = kleidungAb.val();
 
             localStorage.setItem('datenAb', JSON.stringify({
                 datum: da,
@@ -644,12 +646,12 @@
     })
 
     //Übergabe an der Geschäftsstelle Objekt mit Daten erstellen und lokal speichern
-    const uebForm = document.getElementById('uebForm');
-    const kleidungUeb = document.getElementById('inputKleidungUeb');
+    const kleidungUeb = $("#inputKleidungUeb");
 
+    const uebForm = document.getElementById('uebForm');
     uebForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        const kl = kleidungUeb.value;
+        const kl = kleidungUeb.val();
         localStorage.setItem('datenUeb', JSON.stringify({ kleidung: kl, krisengebiet: krisengebiet }));
         window.location.href = "/ueberblick.html";
         console.log('debug1');
