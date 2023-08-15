@@ -12,11 +12,10 @@
     <title>Kleiderspende Magdeburg e.V.</title>
 
     <!-- Bootstrap v4.4.1 CSS framework hinzufügen -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
 
     <!-- CSS Anpassungen -->
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 </head>
 
 <body>
@@ -83,6 +82,7 @@
                             Zusätzlich entscheiden Sie in welches aktuelles Krisengebiet die Kleidung gesendet werden
                             soll.
                         </p>
+                        <div class="hide-lg hide-sml"><br></div>
                         <a id="btnAb" onclick="setAbForm()" class="btn btn-success" href="#anchor-abForm">Abholung
                             vereinbaren</a>
                     </div>
@@ -92,10 +92,11 @@
                     <img class="shadow-lg card-img-top" src="bilder/puerbergabe.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Übergabe an der Geschäftsstelle</h5>
-                        <p class="card-text">Hier können Sie kostenlos einen Termin zur Abgabe der Kleidung an unserer
+                        <p class="card-text">Hier können Sie kostenlos eine persönliche Übergabe der Kleidung an unserer
                             Geschäftsstelle der Kleiderspende Magdeburg e.V. vereinbaren und selber entscheiden in
                             welches
-                            Krisengebiet diese gesendet werden soll.</p><br class="hide-md">
+                            Krisengebiet diese gesendet werden soll.</p>
+                        <div class="hide-md hide-sml"><br></div>
                         <a id="btnUeb" onclick="setUebForm()" class="btn btn-success" href="#anchor-uebForm">Übergabe
                             anmelden</a>
                     </div>
@@ -105,7 +106,7 @@
         <!-- Formular Abholung -->
         <form id="abForm" style="display: none;">
             <div class="form-group">
-                <h1 id="anchor-abForm">Fromular zur Abholung</h1>
+                <h1 id="anchor-abForm">Formular zur Abholung</h1>
                 <h5>Wähle deinen Wunschtermin und wir holen kostenlos deine Altkleider ab!</h5>
             </div>
             <div class="form-row">
@@ -180,7 +181,8 @@
             </div>
             <div class="form-group">
                 <label for="inputStrasseAb">Straße<span style="color: #28a745;">*</span></label>
-                <input type="text" class="form-control" id="inputStrasseAb" placeholder="Wegenerstraße 15" maxlength="70" required>
+                <input type="text" class="form-control" id="inputStrasseAb" placeholder="Wegenerstraße 15"
+                    maxlength="70" required>
             </div>
             <div class="form-group">
                 <label for="inputKleidungAb">Kleidungs Typ und Menge<span style="color: #28a745;">*</span></label>
@@ -410,23 +412,13 @@
     </footer>
 </body>
 
-<!-- jQuery 3.4.1 JavaScript library hinzufügen -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-
-<!-- Popper.js 1.16.0 positioning engine hinzufügen -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
+<!-- jQuery 3.7.0 JavaScript library hinzufügen -->
+<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap.js v4.4.1 JavaScript framework hinzufügen -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
 
-
-<!-- JavaScript Anpassungen -->
+<!-- JavaScript -->
 <script type="text/javascript">
 
     //Variablen
@@ -503,12 +495,11 @@
         $('#uebForm').show();
     }
 
-    //Wunschtermin Auswahl einschränken
+    //Wunschtermin Auswahl einschränken mindestens der nächste Tag und maximal in einem Monat
     var today = new Date();
-    var dd = today.getDate();
+    var dd = today.getDate() + 1; //nur nächster Tag wählbar 
     var mm = today.getMonth() + 1; //Januar hat den index 0
     var yyyy = today.getFullYear();
-    dd = dd + 1;
     maxM = mm + 1;
     if (dd < 10) {
         dd = '0' + dd;
@@ -517,12 +508,11 @@
         mm = '0' + mm;
         maxM = '0' + maxM;
     }
-    min = yyyy + '-' + mm + '-' + dd;
+    min = yyyy + '-' + mm + '-' + dd; //Jahr, Monat und Tag zusammengesetzt 
     max = yyyy + '-' + maxM + '-' + dd;
 
-    //mindestens der nächste Tag und maximal in 30 Tagen 
-    $("#inputDatumAb").attr("min",min);
-    $("#inputDatumAb").attr("max",max);
+    $("#inputDatumAb").attr("min", min); //setzen der CSS-Attribute 
+    $("#inputDatumAb").attr("max", max);
 
     //Eingabedaten validieren und Information zu falschen Eingaben anzeigen
     function validateData() {
@@ -566,8 +556,10 @@
     }
 
     //Regulärer Ausdruck (regex)
+
+    //Nur Buchstaben, Minus und ein Leerzeichen möglich
     function onlyLetters(input) {
-        const regLetters = /^[a-zA-ZäöüÄÖÜß]+$/;
+        const regLetters = /^([a-zA-ZäöüÄÖÜß-]+\s)*[a-zA-ZäöüÄÖÜß-]+$/;
         if (!regLetters.test(input)) {
             return false;
         } else {
@@ -575,18 +567,20 @@
         }
     }
 
+    //Nur Zahlen sind zugelassen
     function onlyNumbers(input) {
-        const regLetters = /^[0-9]+$/;
-        if (!regLetters.test(input)) {
+        const regNumbers = /^[0-9+/\s\-]+$/;
+        if (!regNumbers.test(input)) {
             return false;
         } else {
             return true;
         }
     }
 
+    //Nur korrekte Adressen sind möglich (z.B.: Landsberger Straße 10a)
     function onlyAddress(input) {
-        const regLetters = /^[A-Za-z]+.*[A-Za-z]+.*[0-9]+$/;
-        if (!regLetters.test(input)) {
+        const regAddress = /^[A-Za-zäöüÄÖÜß-\s]+.*[0-9]+[a-z/]?$/;
+        if (!regAddress.test(input)) {
             return false;
         } else {
             return true;
@@ -595,10 +589,8 @@
 
     //Formular Eingabe verarbeiten und mit JSON auf nächste Seite transferieren
 
-    //Abholung Objekt mit Daten erstellen und lokal speichern
-    
+    //Abholung-Formular
     const datum = $("#inputDatumAb");
-    
     const uhrzeit = $("#inputUhrzeitAb");
     const vorname = $("#inputVornameAb");
     const nachname = $("#inputNachnameAb");
@@ -645,7 +637,7 @@
         }
     })
 
-    //Übergabe an der Geschäftsstelle Objekt mit Daten erstellen und lokal speichern
+    //Übergabe-Formular
     const kleidungUeb = $("#inputKleidungUeb");
 
     const uebForm = document.getElementById('uebForm');

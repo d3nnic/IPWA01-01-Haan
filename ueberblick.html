@@ -12,26 +12,10 @@
     <title>Kleiderspende Magdeburg e.V.</title>
 
     <!-- Bootstrap v4.4.1 CSS framework hinzufügen -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
 
     <!-- CSS Anpassungen -->
-    <link rel="stylesheet" href="css/stylesheet.css">
-
-    <!-- jQuery 3.4.1 JavaScript library hinzufügen -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <!-- Popper.js 1.16.0 positioning engine hinzufügen -->
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-
-    <!-- Bootstrap.js v4.4.1 JavaScript framework hinzufügen -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
 </head>
 
@@ -84,7 +68,7 @@
                     <div class="card-body">
                         <div class="card-title text-muted text-center">
                             <h4>Übersicht der Eingabe</h4>
-                            <label class="text-muted">Bitte prüfen Sie ihre Angaben und klicken Sie auf Senden</label>
+                            <label class="text-muted">Bitte prüfen Sie Ihre Angaben und klicken Sie auf Senden</label>
                         </div>
                         <div class="card-text">
                             <div id="divDatum" class="row">
@@ -193,7 +177,8 @@
             <div id="finalScreen" style="display: none;">
                 <img src="bilder/geschaft.jpg" class="card-img img-fluid mt-4 img-trans" alt="Freude" />
                 <h3 class="text-center mt-4"><span class="span-h1">Vielen Dank für Ihre Hilfe!</span></h3><br>
-                <h5 class="text-center mb-3 text-muted">Wir melden uns in Kürze mit einer Terminbestätigung per Email bei Ihnen. <br><br>
+                <h5 class="text-center mb-3 text-muted">Wir melden uns in Kürze mit einer Terminbestätigung per Email
+                    bei Ihnen. <br><br>
                     Ihr Kleiderspende Magdeburg e.V.</h5>
             </div>
             <div style="height: 300px;"></div>
@@ -262,9 +247,16 @@
         </footer>
 </body>
 
+<!-- jQuery 3.7.0 JavaScript library hinzufügen -->
+<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap.js v4.4.1 JavaScript framework hinzufügen -->
+<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+
 <!-- JavaScript -->
 <script type="text/javascript">
 
+    //aktuelles Datum und Uhrzeit vermitteln
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth() + 1;
@@ -277,9 +269,11 @@
     if (minutes < 10) minutes = '0' + minutes;
     if (hours < 10) hours = '0' + hours;
 
+    //im richtigen Format speichern
     day = dd + '.' + mm + '.' + yyyy;
     time = hours + ':' + minutes;
 
+    //erhaltene JSON Objekte extrahieren 
     if (localStorage.getItem('datenAb')) {
         var daten = JSON.parse(localStorage.getItem('datenAb'));
         $("#datum").html(daten.datum);
@@ -304,15 +298,16 @@
         $('#divNachname').hide();
         $('#divEmail').hide();
         $('#divTel').hide();
-        $('#divPlz').hide();
-        $('#divStadt').hide();
-        $('#divBundesland').hide();
-        $('#divStrasse').hide();
+        $('#plz').html("39112");
+        $('#stadt').html("Magdeburg");
+        $('#bundesland').html("Sachsen-Anhalt");
+        $('#strasse').html("Irmgard-Weg 70c");
         $("#imgCard").attr("src", "bilder/puerbergabe.jpeg");
         $("#kleidung").html(daten.kleidung);
         $("#krisengebiet").html(daten.krisengebiet);
     }
 
+    //lokale Daten löschen
     const btnSenden = document.getElementById('btnSenden');
     btnSenden.addEventListener('click', function () {
         $('#infoCard').hide();
